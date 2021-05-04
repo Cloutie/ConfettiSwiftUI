@@ -129,7 +129,7 @@ public struct ConfettiCannon: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + confettiConfig.repetitionInterval * Double(i)) {
                         animate.append(false)
                         if(value < animate.count){
-                            animate[value-1].toggle()
+                            animate[max(0, value-1)].toggle()
                         }
                     }
                 }
